@@ -1,3 +1,17 @@
 from django.shortcuts import render
 
-# Create your views here.
+# Відображення деталей про профіль групи
+class GroupProfileView():
+    ...
+
+# Відображення деталей про профіль юзера
+class UserProfileView():
+    ...
+
+# Редагування профіля користувача
+class UserProfileUpdateView():
+    ...
+
+# Створення нового користувача
+class SignUpView():
+    ...
