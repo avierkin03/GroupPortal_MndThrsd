@@ -1,17 +1,17 @@
 from django.shortcuts import render
 
-# Відображення деталей про профіль групи
-class GroupProfileView():
+# Список подій
+class EventListView():
     ...
 
-# Відображення деталей про профіль юзера
-class UserProfileView():
+# Створення нової події
+class EventCreateView():
     ...
 
-# Редагування профіля користувача
-class UserProfileUpdateView():
+# Редагування існуючої події
+class EventUpdateView():
     ...
 
-# Створення нового користувача
-class SignUpView():
+# Видалення існуючої події
+class EventDeleteView():
     ...
