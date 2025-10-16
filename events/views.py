@@ -1,3 +1,17 @@
 from django.shortcuts import render
 
-# Create your views here.
+# Список подій
+class EventListView():
+    ...
+
+# Створення нової події
+class EventCreateView():
+    ...
+
+# Редагування існуючої події
+class EventUpdateView():
+    ...
+
+# Видалення існуючої події
+class EventDeleteView():
+    ...
