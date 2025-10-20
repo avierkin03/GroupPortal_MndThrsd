@@ -10,8 +10,7 @@
                 Описание: {{Event.description}} <br>
                 Дата создания: {{Event.creation_time}} <br>
                 {% if user.profile.role in 'admin, moderator' %}
-                    <a href = '#'> Редактировать </a>
-                    <a href = '#'> Удалить </a>
+                    <a href = '#'> Создать </a>
                 {% endif %}
             </li>
         {% endfor %}
