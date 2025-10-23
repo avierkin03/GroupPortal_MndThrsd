@@ -13,4 +13,4 @@ class Post(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name="posts")
     content = models.TextField()
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
-    created_time = models.DateTimeField()
+    created_time = models.DateTimeField(auto_now_add=True)
