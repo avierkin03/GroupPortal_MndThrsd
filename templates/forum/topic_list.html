@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Список тем</h1>
+<ul>
+    {% for topic in topics %}
+    <li>
+        <a href='{% url "topic-detail" topic.pk %}'>{{topic.title}}</a>
+    </li>
+    {% empty %}
+    <li>Тем не найдено</li>
+    {% endfor %}
+</ul>
+<p><a href='{% url "topic-create" %}'>Создать новую тему</a></p>
+
+{% endblock %}
