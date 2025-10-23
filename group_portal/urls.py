@@ -24,5 +24,6 @@ urlpatterns = [
     path('', include("core.urls")),
     path('events/', include("events.urls")),
     path('forum/', include("forum.urls")),
+    path('portfolio/', include("portfolio.urls")),
     path('accounts/', include('django.contrib.auth.urls')),  # Для login/logout
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
