@@ -1,18 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2> Список действий </h2>
-    <ul>
-        {% for Event in events %}
-            <li>
-                {{Event.title}} <br> 
-                Дата начала: {{Event.start_time}} <br>
-                Дата завершения: {{Event.end_time}} <br>
-                Описание: {{Event.description}} <br>
-                Дата создания: {{Event.creation_time}} <br>
-                {% if user.profile.role in 'admin, moderator' %}
-                    <a href = '#'> Создать </a>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+    <h2> Создать мероприятие </h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Готово</button>
+    </form>
 {% endblock %}

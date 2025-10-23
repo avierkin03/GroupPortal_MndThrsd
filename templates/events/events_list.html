@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2> Список действий </h2>
+    <a href="{% url 'event_create' %}">Создать мероприятие</a>
     <ul>
         {% for Event in events %}
-            <li>
+            <li >
                 {{Event.title}} <br> 
                 Дата начала: {{Event.start_time}} <br>
                 Дата завершения: {{Event.end_time}} <br>
                 Описание: {{Event.description}} <br>
                 Дата создания: {{Event.creation_time}} <br>
                 {% if user.profile.role in 'admin, moderator' %}
-                    <a href = '#'> Редактировать </a>
-                    <a href = '#'> Удалить </a>
+                    <a href = '{% url "event_update" Event.pk%}' type="button" class="btn btn-primary"> Редактировать </a>
+                    <a href = '{% url "event_delete" Event.pk%}' type="button" class="btn btn-primary"> Удалить </a>
                 {% endif %}
             </li>
         {% endfor %}

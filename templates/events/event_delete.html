@@ -1,19 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2> Список действий </h2>
-    <ul>
-        {% for Event in events %}
-            <li>
-                {{Event.title}} <br> 
-                Дата начала: {{Event.start_time}} <br>
-                Дата завершения: {{Event.end_time}} <br>
-                Описание: {{Event.description}} <br>
-                Дата создания: {{Event.creation_time}} <br>
-                {% if user.profile.role in 'admin, moderator' %}
-                    <a href = '#'> Редактировать </a>
-                    <a href = '#'> Удалить </a>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+    <h2> Удалить мероприятие </h2>
+    <p>Уверены ли вы что хотите удалить {{object.title}} ?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Удалить</button>
+    </form>
 {% endblock %}
