@@ -12,5 +12,5 @@ class Topic(models.Model):
 class Post(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name="posts")
     content = models.TextField()
-    creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_creator")
-    created_time = models.DateTimeField(auto_now_add=True)
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
+    created_time = models.DateTimeField()
